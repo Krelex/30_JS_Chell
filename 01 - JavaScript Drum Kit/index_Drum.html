@@ -60,32 +60,8 @@ L<!DOCTYPE html>
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
-
-
-  <script>
-	window.addEventListener('keydown', playSound );
-
-	function playSound(event) {
-		var audio = document.querySelector(`audio[data-key="${event.keyCode}"]`); 
-		var key = document.querySelector(`div[data-key="${event.keyCode}"]`);
-		if(!audio) return;
-		audio.currentTime=0;
-		audio.play();
-
-		key.classList.add('playing');
-	}
-
-	function removeTransition (event) {
-		if(event.propertyName !== 'transform') return;	
-		this.classList.remove('playing');
-		
-	}
-
-	const keys = document.querySelectorAll('.key');
-	keys.forEach(key => key.addEventListener('transitionend', removeTransition ) )
-
-
-
+<script src="myScript.js">
+	
 </script>
 </body>
 </html>
